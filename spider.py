@@ -7,12 +7,12 @@ from usa_pc import USA
 
 def test_ip(proxy):
     headers2 = {
-        'Referer': 'http://www.runoob.com/python3/python3-tutorial.html',
+        'Referer': 'http://www.baudi.com/',
         'User-Agent': random.choice(USA)
     }
     try:
         proxies = {"http":proxy}
-        test_url = "http://www.runoob.com/python3/python3-tutorial.html"
+        test_url = "http://www.baidu.com/"
         response = requests.get(test_url, headers=headers2, proxies=proxies, timeout=3)
         return response.status_code
     except :
