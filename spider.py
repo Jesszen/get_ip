@@ -16,7 +16,7 @@ def test_ip(proxy):
         response = requests.get(test_url, headers=headers2, proxies=proxies, timeout=3)
         return response.status_code
     except :
-        print("########################dudu链接超时：{}不可用割了##############################".format(proxy))
+        pass
 
 def to_text(proxy):
     print("########################biubiu连接成功：{}可用写入中##############################".format(proxy))
@@ -42,7 +42,7 @@ def get_ip(i):
             to_text(proxy)
         else:
             print("########################dudu链接失败：{}不可用割了##############################".format(proxy))
-    time.sleep(random.randint(3, 4))
+    # time.sleep(random.randint(3, 4))
 
 if __name__ == '__main__':
     for i in range(1, 101):
