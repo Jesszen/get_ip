@@ -16,10 +16,10 @@ def test_ip(proxy):
         response = requests.get(test_url, headers=headers2, proxies=proxies, timeout=3)
         return response.status_code
     except :
-        print("########################{}不可用割了##############################".format(proxy))
+        print("########################dudu链接超时：{}不可用割了##############################".format(proxy))
 
 def to_text(proxy):
-    print("########################{}可用写入中##############################".format(proxy))
+    print("########################biubiu连接成功：{}可用写入中##############################".format(proxy))
     with open("ip_pool.txt","a",encoding="utf-8") as f:
         f.write(proxy+"\n")
         f.close()
@@ -40,6 +40,8 @@ def get_ip(i):
         status = test_ip(proxy)
         if status == 200:
             to_text(proxy)
+        else:
+            print("########################dudu链接失败：{}不可用割了##############################".format(proxy))
     time.sleep(random.randint(3, 4))
 
 if __name__ == '__main__':
